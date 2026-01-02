@@ -132,9 +132,9 @@ if submitted:
     # Predict (no scaling — raw ints)
     try:
         preds = model.predict(X, verbose=0)
-        adhd_prob = float(preds[0][0])
-        anxiety_prob = float(preds[1][0])
-        dep_prob = float(preds[2][0])
+        adhd_prob = float(np.squeeze(preds[0]))
+        anxiety_prob = float(np.squeeze(preds[1]))
+        dep_prob = float(np.squeeze(preds[2]))
     except Exception as e:
         st.error(f"Prediction failed: {e}")
         st.stop()

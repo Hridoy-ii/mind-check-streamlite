@@ -23,9 +23,10 @@ Powered by a machine learning model trained on clinical responses.
 
 col1, col2 = st.columns(2)
 with col1:
-    st.page_link("pages/screening.py", label="Start Screening (5 min)")
+    if st.button("Start Screening (5 min)", use_container_width=True):
+        st.switch_page("pages/screening.py")
 with col2:
-    st.page_link("pages/about_Us.py", label="How It Works")
+    st.markdown("<div style='display: flex; align-items: center; justify-content: flex-end; height: 100%;'><a href='pages/about_Us.py' style='text-decoration: none;'>How it works</a></div>", unsafe_allow_html=True)
 
 st.image("utils/5792283.jpg", 
-         caption="Your mental health matters.", use_column_width=True)
+         caption="Your mental health matters.")

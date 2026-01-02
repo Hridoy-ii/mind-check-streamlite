@@ -21,14 +21,14 @@ dep_pos = pred["phq_sum"] >= 10
 
 # --- Visual: Radial gauges ---
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.metric("ADHD Risk", f"{adhd:.4f}", 
-              help="Model probability (not diagnostic)")
-with col2:
-    st.metric("Anxiety Risk", f"{anxiety:.4f}")
-with col3:
-    st.metric("Depression Risk", f"{dep:.4f}")
+# col1, col2, col3 = st.columns(3)
+# with col1:
+#     st.metric("ADHD Risk", f"{adhd:.4f}", 
+#               help="Model probability (not diagnostic)")
+# with col2:
+#     st.metric("Anxiety Risk", f"{anxiety:.4f}")
+# with col3:
+#     st.metric("Depression Risk", f"{dep:.4f}")
 
 
 
@@ -50,10 +50,13 @@ with col3:
 
 st.markdown("### 🏷️ Screening Labels (Clinical Cutoff Based)")
 labels = []
-labels.append(f"**ADHD**: {'✅ Positive' if adhd_pos else '❌ Negative'}")
-labels.append(f"**Anxiety**: {'✅ Positive' if anxiety_pos else '❌ Negative'}")
-labels.append(f"**Depression**: {'✅ Positive' if dep_pos else '❌ Negative'}")
-st.markdown(" | ".join(labels))
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.markdown(f"**ADHD**: {'✅ Positive' if adhd_pos else '❌ Negative'}")
+with col2:
+    st.markdown(f"**Anxiety**: {'✅ Positive' if anxiety_pos else '❌ Negative'}")
+with col3:
+    st.markdown(f"**Depression**: {'✅ Positive' if dep_pos else '❌ Negative'}")
 
 # --- Mismatch warnings ---
 mismatches = []

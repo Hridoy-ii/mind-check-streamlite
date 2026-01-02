@@ -36,4 +36,9 @@ A research-informed screening aid built using:
 > 🙏 Developed to promote early awareness — not replace professional care.
 """)
 
-st.image("https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png", width=200)
+st.markdown("""
+### 👨‍💻 Project Team
+
+**Nur Mohammad Hridoy**: [hridoy15-5952@diu.edu.bd](mailto:hridoy15-5952@diu.edu.bd) \n
+**Kanij Fatema**: [fatema15-4884@diu.edu.bd](mailto:fatema15-4884@diu.edu.bd)
+""")
